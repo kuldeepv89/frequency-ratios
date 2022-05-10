@@ -1,5 +1,5 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Module for ratio computation and fitting
+# Module to compute frequency ratios and corresponding covariance matrices
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import numpy as np
 from copy import deepcopy
@@ -292,6 +292,6 @@ def ratio_and_cov(freq, rtype="R012", nrealizations=10000):
     obsR[:, 2] = np.sqrt(np.diag(covR))
 
     # Compute inverse of the covariance matrix
-    # icovR = np.linalg.pinv(covR, rcond=1e-8)
+    # icovR = np.linalg.pinv(covR, rcond=1e-12)
 
     return obsR, covR  # , icovR
